@@ -14,6 +14,6 @@ RUN ng build --aot --configuration=$ENVIRON
 
 
 FROM nginx:alpine
-COPY --from=builder /app/dist/angular-actions-example /usr/share/nginx/html
+COPY --from=builder /app/dist/io-example /usr/share/nginx/html
 EXPOSE 80
 EXPOSE 4300
