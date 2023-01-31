@@ -52,3 +52,15 @@ jobs:
       with:
         url: 'https://api.gotestpro.com:8443/rcteaf-api/api/external/cicd/execute/1458529?apiKey=0d75f2beacac4fce96e95522658bd0c4'
         method: 'GET'
+
+    - name: Run the build process with Docker
+      uses: addnab/docker-run-action@v3
+      with:
+          image: rcyasiramin/angular-actions-example:latest
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          #options: -v ${{ github.workspace }}:/var/www
+          run: |
+                composer install
+                npm install
+                npm run production
