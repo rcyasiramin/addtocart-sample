@@ -37,7 +37,7 @@ jobs:
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        run: docker build . --file angular-actions-example --tag rcyasiramin/angular-actions-example:$(date +%s)
+        run: docker build . --file angular-actions-example --tag rcyasiramin/angular-actions-example:latest
         
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@v5
